@@ -10,14 +10,19 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "homepage": "https://tetsu0222.github.io/janken/"
+
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env PUBLIC_URL=/janken react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && gh-pages -d build"
+    "del": "del -rf docs",
+    "move": "move build docs",
+    "git": "git add . && git commit && git push origin master",
+    "deploy": "npm run del && npm run build && npm run move && npm run git"
   },
   "eslintConfig": {
     "extends": [
